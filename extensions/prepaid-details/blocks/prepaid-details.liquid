@@ -1,0 +1,29 @@
+{% assign service = product.metafields.simcloud.service.value %}
+{% if service != blank %}
+  <div class="simcloud-details" data-simcloud-details data-product-id="{{ product.id }}" {{ block.shopify_attributes }}>
+    <strong>{{ 'simcloud.delivery_details' | t }}</strong>
+    {% if service == 'airtime' or service == 'data' or service == 'electricity' %}
+      <label for="sc-recipient-{{ block.id }}">{{ 'simcloud.recipient' | t }}</label>
+      <input id="sc-recipient-{{ block.id }}" name="properties[SIMcloud recipient]" type="tel" inputmode="tel"
+        autocomplete="tel" placeholder="082 123 4567" required maxlength="20" data-simcloud-input>
+    {% endif %}
+    {% if service == 'electricity' %}
+      <label for="sc-meter-{{ block.id }}">{{ 'simcloud.meter' | t }}</label>
+      <input id="sc-meter-{{ block.id }}" name="properties[SIMcloud meter]" type="text" inputmode="numeric"
+        required pattern="[a-zA-Z0-9]{1,50}" maxlength="50" data-simcloud-input>
+    {% endif %}
+    <p>{{ 'simcloud.notice' | t }} {% if service == 'vas' or service == 'electricity' %}{{ 'simcloud.email_notice' | t }}{% endif %}</p>
+    <p class="simcloud-details-error" data-simcloud-error role="alert" hidden></p>
+    <noscript>{{ 'simcloud.no_script' | t }}</noscript>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "SIMcloud prepaid details",
+  "target": "section",
+  "javascript": "prepaid-details.js",
+  "stylesheet": "prepaid-details.css",
+  "enabled_on": { "templates": ["product"] },
+  "settings": []
+}
+{% endschema %}

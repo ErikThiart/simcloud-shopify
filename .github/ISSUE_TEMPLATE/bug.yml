@@ -1,0 +1,24 @@
+name: Bug report
+description: Report a reproducible problem using synthetic data only.
+body:
+  - type: markdown
+    attributes:
+      value: Never include tokens, customer data, voucher codes, private delivery links, account bindings or real screenshots. Use private vulnerability reporting for security issues.
+  - type: input
+    id: version
+    attributes:
+      label: App version and PHP version
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps with synthetic data
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual behaviour
+    validations:
+      required: true

@@ -1,0 +1,14 @@
+{
+  "name": "simcloud-shopify",
+  "version": "0.2.0-alpha.1",
+  "private": true,
+  "description": "Open-source Shopify theme extension for South African prepaid recipient and meter details.",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "test": "node tests/browser.cjs",
+    "package": "python3 scripts/package.py"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  }
+}

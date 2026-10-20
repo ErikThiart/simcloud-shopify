@@ -1,0 +1,10 @@
+{
+  "simcloud": {
+    "delivery_details": "Prepaid delivery details",
+    "recipient": "South African recipient number",
+    "meter": "Prepaid electricity meter number",
+    "notice": "One prepaid item per line. Check your details before paying.",
+    "email_notice": "Delivery details are sent to your checkout email.",
+    "no_script": "Enable JavaScript to attach delivery details to your order."
+  }
+}
